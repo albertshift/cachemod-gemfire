@@ -30,7 +30,6 @@ public class GemFireCacheEntry extends CacheEntry implements DataSerializable {
   
   @Override
   public void fromData(DataInput in) throws IOException, ClassNotFoundException {
-    key = in.readUTF();
     if (in.readBoolean()) {
       byte[] blob = new byte[in.readInt()];
       in.readFully(blob);
@@ -61,7 +60,6 @@ public class GemFireCacheEntry extends CacheEntry implements DataSerializable {
 
   @Override
   public void toData(DataOutput out) throws IOException {
-    out.writeUTF(key);
     out.writeBoolean(userData != null);
     if (userData != null) {
       byte[] userDataBlob = BlobHelper.serializeToBlob(userData);

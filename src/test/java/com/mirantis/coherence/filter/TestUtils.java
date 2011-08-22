@@ -47,7 +47,6 @@ public class TestUtils {
   
   public static CacheEntry createCacheEntry(String responseText) throws IOException {
     CacheEntry entry = new GemFireCacheEntry();
-    entry.setKey("index.html");
     entry.setContentEncoding("UTF-8");
     entry.setContentType("text/html");
     entry.setExpires(-1);
