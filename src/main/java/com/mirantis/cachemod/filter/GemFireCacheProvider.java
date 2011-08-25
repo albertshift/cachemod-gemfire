@@ -70,4 +70,9 @@ public class GemFireCacheProvider implements CacheProvider {
     return region;
   }
 
+  @Override
+  public int size() {
+    return region.size();
+  }
+  
 }
